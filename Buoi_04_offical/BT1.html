@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Homepage</title>
+    <!-- <script src="myFunction.js"></script> -->
+  </head>
+  <body>
+    <h1>Welcome to my website</h1>
+    <button id="myButton">Click Me</button>
+    <p>Số hạng 1: </p>
+    <input type = "number" id = "sohang1"/>
+    <p>Số hạng 2: </p>
+    <input type = "number" id = "sohang2"/>
+    <button onclick ="addNumber()">Tính tổng</button>
+    <p id = "add">Tổng hai số hạng: </p>
+    <script>
+      //document: chính là file html của mình
+      //getElementById: chính là lấy id bên trong file html, cú pháp là getElementById('tên id trong file html')
+      //addEventListener: chính là tạo sự kiện "<tên sự kiên>" và viết function cho chính sự kiện đó
+      document.getElementById("myButton").addEventListener("click", function () { alert("Button clicked!"); });
+        //null -> là nó giá trị null
+        //0 -> là nó có giá trị 0
+        //undefined -> là nó có nghĩa ko có giá trị
+        //validation: xác thức đầu vào
+      function addNumber(){
+        var sohang1 = document.getElementById("sohang1").value;
+        var sohang2 = document.getElementById("sohang2").value;
+        if(sohang1.lenght == 0){
+            alert("Vui lòng nhập số hạng 1")
+        }
+        if(sohang2.length == 0){
+            alert("Vui lòng nhập số hạng 2")
+        }
+        var sum = Number(sohang1) + Number(sohang2);
+        document.getElementById("add").innerHTML = String(sum);
+    }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Homepage</title>
+    <link rel="stylesheet" href="./style.css">
+    <script  src="./CTDK2.js" ></script>
+  </head>
+  <body>
+    <h1 >Welcome to my website</h1>
+    <div class = "bmi">
+        <input type = "number" id = "he" placeholder="Nhập chiều cao (m)"/>
+        <br>
+        <input type = "number" id = "we" placeholder="Nhập cân nặng (kg)"/>
+        <button onclick = "calBMI()">Tính BMI</button>
+        <br>
+        <p id = "result"></p>
+    </div>
+    
+    <div class ="day">
+        <input type = "number" id = "month" placeholder="Tháng mấy?"/>
+        <button onclick = "day()">Tính số ngày</button>
+        <p id = "ans-day"></p>
+    </div>
+
+    <div class = "calculate">
+        <table>
+        <tr>
+            <td colspan="4">
+                <input type="text" id = "display">   
+            </td>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" onclick="appendToDisplay(1)"></td>
+            <td><input type="button" value="2" onclick="appendToDisplay(2)"></td>
+            <td><input type="button" value="3" onclick="appendToDisplay(3)"></td>
+            <td><input type="button" value="+" onclick="appendToDisplay('+')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="appendToDisplay(4)"></td>
+            <td><input type="button" value="5" onclick="appendToDisplay(5)"></td>
+            <td><input type="button" value="6" onclick="appendToDisplay(6)"></td>
+            <td><input type="button" value="-" onclick="appendToDisplay('-')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="appendToDisplay(7)"></td>
+            <td><input type="button" value="8" onclick="appendToDisplay(8)"></td>
+            <td><input type="button" value="9" onclick="appendToDisplay(9)"></td>
+            <td><input type="button" value="x" onclick="appendToDisplay('*')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="C" onclick="clearDisplay()"></td>
+            <td><input type="button" value="0" onclick="appendToDisplay(0)"></td>
+            <td><input type="button" value="=" onclick="calculate()"></td>
+            <td><input type="button" value="/" onclick="appendToDisplay('/')"></td>
+        </tr>   
+        </table> 
+    </div>
+
+    <div class = "loveme">
+        <canvas id="canvas"></canvas>
+        <h1 id="loveQuestion">Do you love me?</h1>
+        <input type="button" id="btnYes" value="YES" onclick="yesClick()" />
+        <input type="button" id="btnNo" value="NO" onmouseover="noHover()" />
+
+    </div>
+  </body>
+</html>

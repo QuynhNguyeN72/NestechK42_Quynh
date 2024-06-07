@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Homepage</title>
+    <style>
+        body {
+            background-color: rgb(244, 217, 221);
+        }
+        button:hover { 
+            background-color: aquamarine;}
+        button{
+            border-radius: 10px;
+            background-color: lightskyblue;
+        }
+        h1{
+            text-align: center;
+        }
+        .logo img {
+        max-height: 100px;
+        max-width: 100px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class ="logo"> <img src="./q-logo.png" alt="Logo"></div>
+    <h1>Welcome to my website</h1>
+
+<form id="currencyForm">
+    <p> Amount </p>
+    <input type = "number" id = "amount"/>
+
+    <p> From Currency </p>
+        <select id = "fromCurrency">
+            <option value="VND">VietNam</option>
+            <option value="USD">USD</option>
+            <option value="CNY">China</option>
+            <option value="EUR">Euro</option>
+        </select>
+
+    <p> To Currency </p>
+        <select id = "toCurrency">
+            <option value="VND">VietNam</option>
+            <option value="USD">USD</option>
+            <option value="CNY">China</option>
+            <option value="EUR">Euro</option>
+        </select>
+    <button onclick = "convertCurrency()">Convert</button>
+    <br>
+    <p id = "result"></p>
+</form>
+
+<form id="calculateForm">
+    <h1 style = "text-align: center; font-weight: bold; margin-top: 100px;">Máy tính bỏ túi đơn giản</h1>
+    <div class = "calculate">
+        <p>Hãy nhập hai số</p>
+        <div><input id = "input1" placeholder="Nhập số thứ nhất" type="number">
+            <br>
+             <input id = "input2" placeholder="Nhập số thứ hai" type="number">
+        </div>
+        <br>
+        <div>
+            <button onclick="Add()">Add</button>
+            <button onclick="Sub()">Sub</button>
+            <button onclick="Mul()">Mul</button>
+            <button onclick="Div()">Div</button>
+        </div>
+        <p id = "ans"></p>
+    </div>
+</form>
+
+    <script>
+        document.getElementById('currencyForm').onsubmit = function(event) {
+        event.preventDefault();
+        convertCurrency();
+      };
+      function convertCurrency(){
+        var amount = parseFloat(document.getElementById("amount").value);
+        var fromCurrency = document.getElementById("fromCurrency").value;
+        var toCurrency = document.getElementById("toCurrency").value;
+
+        if (amount === '' || isNaN(amount)) {
+            alert("Vui lòng nhập số lượng mệnh giá tiền!!!")
+            return;
+        }else if (fromCurrency == toCurrency){
+            alert("Đơn vị tiền tệ giống nhau rồi!!!")
+            return;
+        }
+            const exchangeRates = { USD: { USD: 1,         EUR: 0.92,     VND: 25449,  CNY: 7225 },
+                                    EUR: { USD: 1.08,      EUR: 1,        VND: 27667,  CNY: 7855 },
+                                    VND: { USD: 0.00004,   EUR: 0.00004,  VND: 1,      CNY: 0.00028 },
+                                    CNY: { USD: 0.138,     EUR: 0.127,    VND: 3522,   CNY: 1 }};
+            const rate = exchangeRates[fromCurrency][toCurrency];
+            const convertedAmount = (amount * rate).toFixed(2);
+        
+
+        document.getElementById("result").innerHTML = `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`;
+    }
+
+        document.getElementById('calculateForm').onsubmit = function(event) {
+        event.preventDefault();
+        };
+
+    function Add(){
+    var Number1 = document.getElementById("input1").value;
+    var Number2 = document.getElementById("input2").value;
+
+    let add = Number(Number1) + Number(Number2);
+    document.getElementById("ans").innerHTML = "Result: " + add;
+    }
+
+    function Sub(){
+    var Number1 = document.getElementById("input1").value;
+    var Number2 = document.getElementById("input2").value;
+
+    let sub = Number1 - Number2;
+    document.getElementById("ans").innerHTML = "Result: " + sub;
+    }
+
+    function Mul(){
+    var Number1 = document.getElementById("input1").value;
+    var Number2 = document.getElementById("input2").value;
+
+    let mul = Number1 * Number2;
+    document.getElementById("ans").innerHTML = "Result: " + mul;
+    }
+
+    function Div(){
+    var Number1 = document.getElementById("input1").value;
+    var Number2 = document.getElementById("input2").value;
+
+    let div = Number1 / Number2;
+    document.getElementById("ans").innerHTML = "Result: " + div;
+    }
+
+    </script>
+  </body>
+</html>

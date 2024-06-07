@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Homepage</title>
+  </head>
+  <body>
+    <script>
+      while(1){
+      //Bai 4
+      let year = parseInt(prompt("Nhập vào năm muốn xét: "));
+      if(year % 4 == 0 && year % 100 != 0)
+      {
+        alert("Năm " + year + " nhuận!!!");
+      }
+      else if(year % 100 == 0 && year % 400 == 0 )
+      {
+        alert("Năm " + year + " nhuận!!!");
+      }
+      else
+      {
+        alert("Năm " + year + " không nhuận!!!");
+      }
+
+      //Bai 5
+      let userName = prompt("Bạn là:");
+      if(userName == "Quynh")
+      {
+        let passWord = prompt("Mật khẩu là:");
+        {
+          if(passWord == "TheMaster")
+          {
+            alert("Welcome!");
+          }
+          else if(passWord == null)
+          {
+            alert("Canceled");
+          }
+          else{
+            alert("Wrong password!");
+          }
+        }
+
+      }
+      else if(userName == null)
+      {
+        alert("Canceled");
+      }
+      else{
+        alert("I don't know you!");
+    }
+
+    //Bai 6
+    let browser = prompt("Browser:");
+    switch(browser)
+    {
+      case('Edge'): 
+        alert("You've got the Edge!"); 
+        break;
+      case('Chrome' || 'Firefox' || 'Safari' || 'Opera'): 
+        alert('Okay we support these browsers too'); 
+        break;
+      default: 
+        alert("We hope that this page looks ok!"); 
+        break;
+    }
+
+    let value = prompt("Nhập vào một số:");
+    // if(value > 0)
+    // {
+    //   alert(1);
+    // }
+    // else if(value < 0)
+    // {
+    //   alert(-1);
+    // }
+    // else{
+    //   alert(0);
+    // }
+
+    switch(Math.sign(value)){
+      case(1): 
+        alert(1); 
+        break;
+      case(-1): 
+        alert(-1); 
+        break;
+      default: 
+        alert(0); 
+        break;
+    }
+
+    //Bai 7
+    let a = parseInt(prompt("Nhập a:"));
+    let b = parseInt(prompt("Nhập b:"));
+    let sum = a + b;
+    (sum < 4) ? alert("Below") : alert("Over");
+
+    let login = prompt("Bạn là:"); 
+    (login == "Employee") ? alert("Hello") : (login == "Director") ? alert("Greetings") : (login == "") ? alert("No login") : alert(" ");
+  }
+    </script>
+  </body>
+</html>

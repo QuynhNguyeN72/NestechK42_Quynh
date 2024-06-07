@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng Cửu Chương</title>
+    <style>
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Bảng Cửu Chương</h1>
+    <div id="multiplicationTable"></div>
+
+    <h1 style="text-align: center;">Hiển thị số nguyên tố</h1>
+    <div style="text-align: center;" id="snt">
+        <input type = "number" id = "numbers" placeholder="Nhập số lượng số nguyên tố muốn hiển thị"/>
+        <button onclick = "findSNT()">Tìm số nguyên tố</button>
+        <br>
+        <p id = "result"></p>
+    </div>
+
+    <script>
+        function createMultiplicationTable() {
+            // Tạo một phần tử bảng
+            const table = document.createElement('table');
+
+            // Tạo hàng tiêu đề
+            const headerRow = document.createElement('tr');
+            const headerCell = document.createElement('th');
+            headerCell.innerText = 'Bảng';
+            headerRow.appendChild(headerCell);
+
+            for (let i = 1; i <= 10; i++) {
+                const headerCell = document.createElement('th');
+                headerCell.innerText = i;
+                headerRow.appendChild(headerCell);
+            }
+            table.appendChild(headerRow);
+
+            // Tạo các hàng dữ liệu
+            for (let i = 1; i <= 10; i++) {
+                const row = document.createElement('tr');
+                const headerCell = document.createElement('th');
+                headerCell.innerText = i;
+                row.appendChild(headerCell);
+
+                for (let j = 1; j <= 10; j++) {
+                    const cell = document.createElement('td');
+                    cell.innerText = `${i} x ${j} = ${i * j}`;
+                    row.appendChild(cell);
+                }
+
+                table.appendChild(row);
+            }
+
+            // Thêm bảng vào phần tử div
+            document.getElementById('multiplicationTable').appendChild(table);
+        }
+
+        // Gọi hàm tạo bảng khi trang được tải
+        window.onload = createMultiplicationTable;
+
+        function findSNT(){
+            var numbers = parseInt(document.getElementById("numbers").value);
+            let count = 0;
+            let arrsnt = [];
+            for( let N = 2; N <= 72; N++)
+            {
+                let check = true;
+                for(let q = 2; q <= Math.sqrt(N); q++){
+                    if(N % q == 0){
+                        check = false;
+                        break;
+                    }
+                }
+
+                if(check){
+                    arrsnt.push(N);
+                    count++;
+                    if(count == numbers){
+                    break;
+                    }
+                }
+            }
+                    document.getElementById("result").innerHTML = arrsnt.join(', ');        
+        }
+    </script>
+</body>
+</html>

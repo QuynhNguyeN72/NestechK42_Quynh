@@ -1,0 +1,50 @@
+.headd{
+    display: flex;
+}
+#logo{
+    width: 50%;
+    height: 50%;
+    flex: 2;
+}
+.bar{
+    width: 50%;
+    flex: 2;
+}
+.hi{
+    margin-top: 1%;
+    border: 5px solid blue;
+    color: blueviolet;
+    text-align: center;
+}
+.body{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.title{
+    padding: 10px;
+    border: 5px solid brown;
+    text-align: center;
+}
+.cont{
+    position: absolute;
+    right: 100px;
+    border-radius:5%;
+    background-color: aquamarine;
+}
+.bye{
+    border: 5px dotted palevioletred;
+    text-align: center;
+}
+.foott{
+    display: flex;
+}
+.logo{
+    padding: 10px;
+    width: 50%;
+    height: 50%;
+    flex: 2;
+}
+.bar{
+    width: 50%;
+    flex: 2;
+}

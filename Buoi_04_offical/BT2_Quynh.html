@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Homepage</title>
+  </head>
+  <body>
+    <h1>Welcome to my website</h1>
+    <p> Tên tôi là: </p>
+    <input type = "text" id = "name"/>
+    <p> Khóa học của tôi là: </p>
+    <input type = "text" id = "course"/>
+    <p> Sở thích của tôi là: </p>
+    <input type = "text" id = "hobby"/>
+    <button onclick ="addInformation()">Tra thông tin</button>
+    <p id = "infor"> Your Information</p>
+    <script>
+      function addInformation(){
+        var name = document.getElementById("name").value;
+        var course = document.getElementById("course").value;
+        var hobby = document.getElementById("hobby").value;
+        if(name.lenght == 0){
+            alert("Vui lòng nhập họ và tên")
+        }
+        if(course.length == 0){
+            alert("Vui lòng nhập tên khóa học")
+        }        
+        if(hobby.lenght == 0){
+            alert("Vui lòng nhập sở thích")
+        }
+        document.getElementById("infor").innerHTML = 
+        "Họ và tên: " + String(name) 
+        +"<br>"+ "Khóa học: " + String(course) 
+        +"<br>"+ "Sở thích: " + String(hobby);
+    }
+    </script>
+
+    <button id="myButton">Click here</button>
+    <p id = "count"> </p>
+    <script>
+        var count = 0;
+        document.getElementById("myButton").addEventListener("click", function () 
+        { 
+            count ++; 
+            document.getElementById("count").innerHTML = "Số lần nhấn nút: " + count;
+        });
+    </script>
+  </body>
+</html>
