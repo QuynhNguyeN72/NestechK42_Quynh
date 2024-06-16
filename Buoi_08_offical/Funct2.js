@@ -65,15 +65,19 @@ function callProduct(){
     const productList = document.getElementById('productList');
     productList.innerHTML = '';
     products.forEach((product, index) => {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td onclick="editProduct(${index})">${product}</td>
-            <td><button onclick="editProduct(${index})">Edit</button></td>
-
-            <td><button onclick="deleteProduct(${index})">Delete</button></td>
-        `;
-        productList.appendChild(row);
-        //Nếu muốn đánh số sản phẩm: <td>${index + 1}</td>
+            const row = document.createElement('tr');      
+            row.innerHTML = `
+                <td>${index + 1}</td>
+                <td onclick="editProduct(${index})">${product}</td>
+                <td><button onclick="editProduct(${index})">Edit</button></td>
+    
+                <td><button onclick="deleteProduct(${index})">Delete</button></td>
+            `;
+            productList.appendChild(row);
+            if(index % 2 == 0){
+                row.className = 'color';
+            }else{
+        }
     });
 
 }
