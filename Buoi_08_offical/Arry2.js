@@ -1,24 +1,24 @@
-// document.addEventListener('DOMContentLoaded', (event) => {
-//     const fixedText = "Vương Dịch yêu Châu Thi Vũ!!! 👉👈 Thi tình họa dịch is real" ;
-//     let index = 0;
+document.addEventListener('DOMContentLoaded', (event) => {
+    const fixedText = "Vương Dịch yêu Châu Thi Vũ!!! 👉👈 Thi tình họa dịch is real" ;
+    let index = 0;
 
-//     const inputField = document.getElementById('input');
-//     const displayField = document.getElementById('display');
+    const inputField = document.getElementById('input');
+    const displayField = document.getElementById('display');
 
-//     inputField.addEventListener('keydown', (event) => {
-//         event.preventDefault();  // Ngăn không cho ký tự thực sự được nhập vào
+    inputField.addEventListener('keydown', (event) => {
+        event.preventDefault();  // Ngăn không cho ký tự thực sự được nhập vào
 
-//         // Hiển thị từng ký tự của chuỗi cố định
-//         if (index < fixedText.length) {
-//             displayField.textContent += fixedText[index];
-//             index++;
-//         }
-//     });
-// });
+        // Hiển thị từng ký tự của chuỗi cố định
+        if (index < fixedText.length) {
+            displayField.textContent += fixedText[index];
+            index++;
+        }
+    });
+});
 
 
-// const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-// randomArray.push(randomNumber);
+const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+randomArray.push(randomNumber);
 
 
 let a = [];
