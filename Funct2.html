@@ -1,3 +1,4 @@
+<<<<<<< HEAD:Funct2.html
 <!DOCTYPE html>
 <html>
   <head>
@@ -50,4 +51,55 @@
     </table>
     </div>
   </body>
+=======
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Homepage</title>
+    <script  src="./Funct2.js" ></script>
+    <style>
+      button{
+        background-color: lightseagreen;
+        font-weight: bold;
+        color: white;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class ="findStar" style="text-align: center;">
+      <h1>Star and Constellation Finder</h1>
+      <input type = "text" id = "star" placeholder = "Ngôi sao cần xác nhận?"/>
+      <button onclick = "checkStar()">Xác nhận chòm sao</button>
+      <br>
+      <p id = "ans-star"> </p>
+      <br>
+    </div>
+
+
+    <div>
+      <h1 style="text-align: center;">Product Management</h1>
+      <form id="addForm">
+        <p style="font-weight: bold; font-style: italic;" >Add New Product</p>
+        <input type="text" id="newProduct" placeholder="New product">
+        <button type="button" onclick="addProduct()">Add</button>
+    </form>
+    <br>
+    <form id="editForm" style="display: none;">
+        <button type="button" onclick="updateProduct()">Update</button>
+        <input type="text" id="editProduct" placeholder="Edit product name">
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>Product Name</th>
+            </tr>
+        </thead>
+        <tbody id="productList">
+            <!-- Product rows will be added here dynamically -->
+        </tbody>
+    </table>
+    </div>
+  </body>
+>>>>>>> parent of 47a573a (arr):Buoi_08_offical/Funct2.html
 </html>
